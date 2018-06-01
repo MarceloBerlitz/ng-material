@@ -12,8 +12,10 @@ import { AlertService } from '../../alert/alert.service';
 export class PetListComponent implements OnInit {
 
   pets: Pet[] = [];
-  subscriptionGet = new Subscription;
+  subscriptionGetPage = new Subscription;
+  subscriptionGetAll = new Subscription;
   subscriptionDelete = new Subscription;
+  totalOfItens: number;
 
   delete(pet: Pet) {
     if(confirm(`Tem certeza que deseja excluir permanentemente ${pet.name}?`)){
@@ -32,8 +34,12 @@ export class PetListComponent implements OnInit {
     private alertService: AlertService
   ) { }
 
-  loadPets() {
-    this.subscriptionGet = this.petService.getAll()
+  changePage(event: any) {
+    this.loadPets(event.pageIndex + 1);
+  }
+
+  loadPets(page) {
+    this.subscriptionGetPage = this.petService.getPage(page)
     .subscribe((data: Pet[]) => {
       this.pets = data;
     }, err => {
@@ -41,12 +47,23 @@ export class PetListComponent implements OnInit {
     });
   }
 
+  getTotalOfItens() {
+    this.subscriptionGetAll = this.petService.getAll()
+    .subscribe((data: Pet[]) => {
+      this.totalOfItens = data.length;
+    }, err => {
+      this.alertService.newAlert.emit(['Erro ao carregar pets', 'danger']);
+    });
+  }
+
   ngOnInit() {
-    this.loadPets();
+    this.getTotalOfItens();
+    this.loadPets(1);
   }
 
   ngOnDestroy() {
-    this.subscriptionGet.unsubscribe();
+    this.subscriptionGetPage.unsubscribe();
+    this.subscriptionGetAll.unsubscribe();
     this.subscriptionDelete.unsubscribe();
   }
 

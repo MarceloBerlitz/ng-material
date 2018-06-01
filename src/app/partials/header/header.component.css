@@ -1,9 +1,15 @@
 a {
-    margin: 10px;
-    text-decoration: none;
     color: #ccc;
 }
 
 .active {
     color: white;
+    /*background-color: #3748ab;
+    box-shadow: inset 1px 2px 3px black;*/
+    border-bottom: 2px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-color: white;
+    border-style: solid;
 }

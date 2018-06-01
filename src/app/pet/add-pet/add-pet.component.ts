@@ -16,15 +16,19 @@ export class AddPetComponent implements OnInit {
   subscription: Subscription;
 
   onSubmit() {
-    this.subscription = this.petService.add(this.form.value)
-      .subscribe(
-        data => {
-          this.router.navigate(['/']);
-          this.alertService.newAlert.emit(['Pet adicionado!', 'success']);
-        }, err => {
-          this.alertService.newAlert.emit(['Erro ao adicionar pet!', 'danger']);
-        }
-      );
+    if(this.form.valid){
+      this.subscription = this.petService.add(this.form.value)
+        .subscribe(
+          data => {
+            this.router.navigate(['/']);
+            this.alertService.newAlert.emit(['Pet adicionado!', 'success']);
+          }, err => {
+            this.alertService.newAlert.emit(['Erro ao adicionar pet!', 'danger']);
+          }
+        );
+    } else {
+      this.alertService.newAlert.emit(['Formulário inválido!', 'danger']);
+    }
   }
 
   constructor(

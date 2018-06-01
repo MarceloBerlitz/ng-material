@@ -3,3 +3,10 @@
     right: 20px;
     bottom: 20px;
 }
+
+mat-paginator {
+    float: left; 
+    margin-top: 10px; 
+    margin-right: 100px; 
+    margin-bottom: 16px
+}

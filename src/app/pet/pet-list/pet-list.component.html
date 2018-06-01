@@ -21,6 +21,12 @@
     </button>
   </mat-expansion-panel>
 </mat-accordion>
+
+<mat-paginator [length]="totalOfItens"
+  [pageSize]="10"
+  (page)="changePage($event)">
+</mat-paginator>
+
 <a class="fab" routerLink="/add" mat-fab>
   <mat-icon>add</mat-icon>
 </a>
