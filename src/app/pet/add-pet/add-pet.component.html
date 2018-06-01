@@ -1,0 +1,19 @@
+<h1 class="mat-h1">Adicionar Pet</h1>
+<form class="add-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput placeholder="Nome" formControlName="name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Nascimento" formControlName="birth">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Espécie" formControlName="species">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Dono" formControlName="keeper">
+  </mat-form-field>
+  <button mat-raised-button class="float-right" type="submit">Salvar</button>
+  <button mat-raised-button class="float-right" type="submit" routerLink="/">Cancelar</button>
+</form>

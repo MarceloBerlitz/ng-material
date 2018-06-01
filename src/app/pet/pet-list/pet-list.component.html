@@ -1,0 +1,13 @@
+<mat-card>
+  <h1 class="mat-h1">Todos Pets</h1>
+  <mat-list>
+    <a mat-list-item *ngFor="let pet of pets">
+        <span>
+          {{ pet.name }}
+        </span> 
+    </a>
+  </mat-list>
+  <button class="float-right" routerLink="/add" mat-fab>
+    <mat-icon>add</mat-icon>
+  </button>
+</mat-card>
