@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PetService } from '../pet.service';
 import { Subscription } from 'rxjs';
+import { AlertService } from '../../alert/alert.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-pet',
@@ -17,16 +19,19 @@ export class AddPetComponent implements OnInit {
     this.subscription = this.petService.add(this.form.value)
       .subscribe(
         data => {
-          console.log(data)
+          this.router.navigate(['/']);
+          this.alertService.newAlert.emit(['Pet adicionado!', 'success']);
         }, err => {
-          console.log(err)
+          this.alertService.newAlert.emit(['Erro ao adicionar pet!', 'danger']);
         }
       );
   }
 
   constructor(
     private formBuilder: FormBuilder,
-    private petService: PetService
+    private petService: PetService,
+    private alertService: AlertService,
+    private router: Router
   ) { }
 
   ngOnInit() {

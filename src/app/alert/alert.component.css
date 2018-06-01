@@ -1,0 +1,15 @@
+.danger {
+    background-color: #FF6F69;
+}
+
+.success {
+    background-color: #8AC290;
+}
+
+.alert {
+    padding: 15px;
+    box-shadow: 1px 2px 2px grey;
+    margin-bottom: 10px;
+    min-height: 20px;
+    color: white;
+}

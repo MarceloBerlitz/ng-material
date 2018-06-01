@@ -4,9 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { MaterialModule } from './material/material.module';
 import { HeaderComponent } from './partials/header/header.component';
+import { AlertModule } from './alert/alert.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { HeaderComponent } from './partials/header/header.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]

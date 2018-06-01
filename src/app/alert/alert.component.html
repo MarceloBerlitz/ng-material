@@ -1,0 +1,9 @@
+<div *ngIf="hasAlert">
+  <div class="alert {{type}}">
+    <span>{{ alertText }}</span>
+    <a (click)="closeAlert()" class="float-right">
+      <mat-icon>close</mat-icon>
+    </a>
+  </div>
+  <br>
+</div>

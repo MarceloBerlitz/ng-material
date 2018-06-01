@@ -1,13 +1,26 @@
-<mat-card>
-  <h1 class="mat-h1">Todos Pets</h1>
-  <mat-list>
-    <a mat-list-item *ngFor="let pet of pets">
-        <span>
-          {{ pet.name }}
-        </span> 
+<h1>Todos Pets</h1>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let pet of pets">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ pet.name }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Nascimento: {{ pet.birth | date }}</p>
+    <p>Espécie: {{ pet.species }}</p>
+    <p>Dono: {{ pet.keeper }}</p>
+    <a color="primary" mat-raised-button>
+      <mat-icon>
+        edit
+      </mat-icon>
     </a>
-  </mat-list>
-  <button class="float-right" routerLink="/add" mat-fab>
-    <mat-icon>add</mat-icon>
-  </button>
-</mat-card>
+    <button color="warn" (click)="delete(pet)" mat-raised-button>
+      <mat-icon>
+        delete_outline
+      </mat-icon>
+    </button>
+  </mat-expansion-panel>
+</mat-accordion>
+<a class="fab" routerLink="/add" mat-fab>
+  <mat-icon>add</mat-icon>
+</a>

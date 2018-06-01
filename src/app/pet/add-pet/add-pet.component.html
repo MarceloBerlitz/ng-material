@@ -1,4 +1,4 @@
-<h1 class="mat-h1">Adicionar Pet</h1>
+<h1>Adicionar Pet</h1>
 <form class="add-form" [formGroup]="form" (ngSubmit)="onSubmit()">
   <mat-form-field>
     <input matInput placeholder="Nome" formControlName="name">
@@ -14,6 +14,6 @@
   <mat-form-field>
     <input matInput placeholder="Dono" formControlName="keeper">
   </mat-form-field>
-  <button mat-raised-button class="float-right" type="submit">Salvar</button>
-  <button mat-raised-button class="float-right" type="submit" routerLink="/">Cancelar</button>
+  <button color="primary" mat-raised-button class="float-right" type="submit">Salvar</button>
+  <a color="accent" mat-raised-button class="float-right" type="submit" routerLink="/">Cancelar</a>
 </form>

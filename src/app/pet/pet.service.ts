@@ -8,6 +8,10 @@ export class PetService {
 
   server: string = 'http://10.0.0.105:3000';
 
+  delete(pet: Pet) {
+    return this.http.delete(`${this.server}/pet/${pet.id}`)
+  }
+
   getAll() {
     return this.http.get(`${this.server}/pet`)
   }
