@@ -9,7 +9,7 @@
     <p>Nascimento: {{ pet.birth | date }}</p>
     <p>Espécie: {{ pet.species }}</p>
     <p>Dono: {{ pet.keeper }}</p>
-    <a color="primary" mat-raised-button>
+    <a color="primary" mat-raised-button routerLink="/edit/{{ pet.id }}">
       <mat-icon>
         edit
       </mat-icon>

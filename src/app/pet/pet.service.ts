@@ -7,6 +7,7 @@ import { Pet } from '../models/pet';
 export class PetService {
 
   server: string = 'http://10.0.0.105:3000';
+  //server = 'http://717b9d3d.ngrok.io';
 
   delete(pet: Pet) {
     return this.http.delete(`${this.server}/pet/${pet.id}`)

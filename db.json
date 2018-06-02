@@ -8,13 +8,6 @@
       "keeper": "Marcelo"
     },
     {
-      "name": "Satanás",
-      "birth": "2006-06-06T03:00:00.000Z",
-      "species": "Gato",
-      "keeper": "Clotilde",
-      "id": "LUm4x2W"
-    },
-    {
       "name": "Mimosa",
       "birth": "2018-06-11T03:00:00.000Z",
       "species": "Vaca",
@@ -83,6 +76,13 @@
       "species": "Cobra Dagua",
       "keeper": "Poseidon",
       "id": "nznG9BW"
+    },
+    {
+      "name": "Petiosvaldo",
+      "birth": "2018-06-02T03:00:00.000Z",
+      "species": "Cachorrus 🐕",
+      "keeper": "Guilherme Kaercher",
+      "id": "_r6ZiZW"
     }
   ]
 }

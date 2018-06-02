@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { PetService } from '../pet.service';
 import { Subscription } from 'rxjs';
-import { AlertService } from '../../alert/alert.service';
 import { Router } from '@angular/router';
+
+import { AlertService } from '../../alert/alert.service';
+import { PetService } from '../pet.service';
 
 @Component({
   selector: 'app-add-pet',
@@ -12,6 +13,8 @@ import { Router } from '@angular/router';
 })
 export class AddPetComponent implements OnInit {
 
+  title: string;
+  currentRoute: string;
   form: FormGroup;
   subscription: Subscription;
 
@@ -31,6 +34,23 @@ export class AddPetComponent implements OnInit {
     }
   }
 
+  verifyRoute() {
+    if(this.router.url == '/add'){
+      this.currentRoute = 'add';
+    } else if(this.router.url.substring(0, 5) == '/edit'){
+      this.currentRoute = 'edit';
+    }
+
+    if(this.currentRoute == 'add'){
+      this.title = 'Adicionar Pet';
+    }
+
+    if(this.currentRoute == 'edit'){
+      this.title = 'Editar Pet';
+    }
+
+  }
+
   constructor(
     private formBuilder: FormBuilder,
     private petService: PetService,
@@ -39,6 +59,7 @@ export class AddPetComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.verifyRoute();
     this.form = this.formBuilder.group({
       name: [null, [Validators.required, Validators.minLength(3)]],
       birth: [null, [Validators.required]],
