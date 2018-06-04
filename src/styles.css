@@ -21,3 +21,7 @@ a {
 mat-form-field {
     margin: 5px;
 }
+
+.outlined {
+    margin: 2px !important;
+}
