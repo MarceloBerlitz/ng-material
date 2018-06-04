@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 body { margin: 0; }
 
 .float-right {
@@ -20,4 +21,8 @@ a {
 
 mat-form-field {
     margin: 5px;
+}
+
+.outlined {
+    margin: 2px !important;
 }

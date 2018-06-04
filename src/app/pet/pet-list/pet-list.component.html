@@ -9,12 +9,12 @@
     <p>Nascimento: {{ pet.birth | date }}</p>
     <p>Espécie: {{ pet.species }}</p>
     <p>Dono: {{ pet.keeper }}</p>
-    <a color="primary" mat-raised-button routerLink="/edit/{{ pet.id }}">
+    <a class="outlined" color="primary" mat-raised-button routerLink="/edit/{{ pet.id }}">
       <mat-icon>
         edit
       </mat-icon>
     </a>
-    <button color="warn" (click)="delete(pet)" mat-raised-button>
+    <button class="outlined" color="warn" (click)="delete(pet)" mat-raised-button>
       <mat-icon>
         delete_outline
       </mat-icon>
