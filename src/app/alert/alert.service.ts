@@ -6,4 +6,5 @@ export class AlertService {
   newAlert: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
+  
 }

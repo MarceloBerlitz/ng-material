@@ -4,19 +4,6 @@ import { MatCardModule, MatListModule, MatIconModule, MatButtonModule, MatFormFi
 
 @NgModule({
   imports: [
-    CommonModule,
-    MatListModule,
-    MatCardModule,
-    MatIconModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatInputModule,
-    MatGridListModule,
-    MatToolbarModule,
-    MatExpansionModule,
-    MatPaginatorModule
   ],
   exports: [
     MatListModule,
