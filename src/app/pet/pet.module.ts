@@ -5,7 +5,6 @@ import { PetRoutingModule } from './pet-routing.module';
 import { PetListComponent } from './pet-list/pet-list.component';
 import { PetService } from './pet.service';
 import { HttpClientModule } from '@angular/common/http';
-import { MatListModule, MatCardModule } from '@angular/material';
 import { MaterialModule } from '../material/material.module';
 import { AddPetComponent } from './add-pet/add-pet.component';
 import { ReactiveFormsModule } from '@angular/forms';
