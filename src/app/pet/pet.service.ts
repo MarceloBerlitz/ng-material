@@ -7,7 +7,8 @@ import { Pet } from '../models/pet';
 export class PetService {
 
   //server: string = 'http://10.0.0.105:3000';
-  server = 'http://192.168.0.6:3000';
+  //server = 'http://192.168.0.6:3000';
+  server = 'http://localhost:3000'
 
   delete(pet: Pet) {
     return this.http.delete(`${this.server}/pet/${pet.id}`)
